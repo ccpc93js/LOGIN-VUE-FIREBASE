@@ -1,0 +1,14 @@
+#app{ 
+    background: url(./assets/HD\ Wallpaper.jpg) no-repeat; 
+    background-size: cover; 
+    background-position: center center; 
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    align-content: center;
+    align-items: center;    
+}
+.divlogin .container{ 
+    width: 100%;
+    text-align: center;
+}

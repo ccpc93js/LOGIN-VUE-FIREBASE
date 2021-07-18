@@ -1,0 +1,26 @@
+.navbarlr a,
+.navbarlr button
+{
+    font-size: 16px;
+    color:#ffff
+    
+}
+
+a.router-link-exact-active{
+    outline: none !important;
+
+}
+
+a.nav-link:hover,
+button.nav-link:hover
+{
+    color:rgb(160, 157, 157) !important;
+}
+
+
+
+.box-shdow{
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition-duration: 0.6s;
+
+}
