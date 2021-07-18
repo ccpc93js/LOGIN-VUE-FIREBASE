@@ -1,6 +1,6 @@
 
 <template>
- <div class="mt-5 container" justify-content="center">
+ <div class="mt-5 container" justify-content="flex">
     <h1 class="text-center mb-3 darkwing">Lista de usuarios</h1>
 
   <div class="mb-3">
@@ -9,8 +9,8 @@
         </router-link>
   </div>
 
-       
-  <table class="table table-bordered table-hover table-striped"   md="12" sm="4">
+  <div class="table-responsive col-lg-12">
+  <table class="table table-bordereless table-hover table-striped" >
   <thead class="">
     <tr class="bg-primary text-white  downDark">
       <th scope="col" v-show="false">ID</th>
@@ -38,7 +38,9 @@
    
 
   </tbody>
-</table>
+  </table>
+  </div> 
+
 
 
   </div>
