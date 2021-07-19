@@ -20,5 +20,15 @@ main{
 
 a{
        text-decoration: none !important;
+       
                
+}
+
+.center{
+       text-align: center !important
+}
+
+.v-icon.v-icon {
+       text-align: center !important
+
 }

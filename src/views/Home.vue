@@ -1,6 +1,6 @@
 
 <template>
- <div class="mt-5 container" justify-content="flex">
+ <div class="mt-5 container" justify-content="center">
     <h1 class="text-center mb-3 darkwing">Lista de usuarios</h1>
 
   <div class="mb-3">
@@ -10,7 +10,7 @@
   </div>
 
   <div class="table-responsive col-lg-12">
-  <table class="table table-bordereless table-hover table-striped" >
+  <table class="table table-bordereless " >
   <thead class="">
     <tr class="bg-primary text-white  downDark">
       <th scope="col" v-show="false">ID</th>
@@ -26,12 +26,13 @@
       <td >{{item.name}}</td>
       <td>{{item.email}}</td>
       <td>{{item.password}}</td>
-      <td class="text-center">
-          <router-link :to="{name: 'EditUser', params: {id: item.id}}" class="mr-5 ">
-          <!-- <router-link to="/EditUser" class="mr-5 "> -->
-          <v-icon>create</v-icon>
+      <td class=" d-flex flex-row justify-content-center">
+          <router-link :to="{name: 'EditUser', params: {id: item.id}}" class="mr-3 text-decoration-none">       
+          <i class="fas fa-edit"></i>
           </router-link>
-          <v-icon @click.prevent="deleteUser(item.id)">delete</v-icon>
+          <button @click.prevent="deleteUser(item.id)">  
+          <i class="fas fa-trash"  ></i>
+          </button>
           
       </td>
     </tr>
@@ -81,7 +82,7 @@ export default {
 
   methods:{
 
-     ...mapActions(['getUsers', 'deleteUser']),
+     ...mapActions(['getUsers']),
 
             deleteUser(id){
               console.log(id)
@@ -99,39 +100,7 @@ export default {
             }
 
 
-        //     editCamp(item){
-        //     swal({
-        //         text:'Nombre:',
-        //         content:"input",
-        //         button:{
-        //             text:"Editar",
-        //             closemodal:false
-        //         }
-        //     }).then(name=>{
-        //         if(!name){ swal(":(","El nombre es requerido","error"); return false; }
-        //         var data = { name:name };
-        //         db.collection('users').doc(item.id).update(data).then(()=>{
-        //             swal("Correcto!","Dato editado","success");
-        //         })
 
-        //     })
-        // },
-        // deleteUser(item){
-        //     swal({
-        //         title:"Seguro que desea continuar",
-        //         text:"Esta acción es irreversible",
-        //         icon:"warning",
-        //         buttons:true,
-        //         dargeMode:true
-        //     })
-        //     .then((ok) => {
-        //         if(ok){
-        //             db.collection("users").doc(item.id).delete().then(function(data){
-        //                 swal("Correcto!","Dato eliminado","success");
-        //             })
-        //         }
-        //     })
-        // }
 
 
     },

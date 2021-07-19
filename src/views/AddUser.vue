@@ -52,6 +52,7 @@
                     </v-form>
 
                     <v-alert
+                        class="mt-5"
                         text
                         type="error"
                         v-if="error"
@@ -85,8 +86,9 @@ export default {
         }
     },
     methods:{
-        // ...mapActions(['addUser']),
         addUser(){
+        if(this.user.name && this.user.email && this.user.password  ){
+            if(this.user.password === this.passwordConfirm ){
           db.collection('users').add(this.user)
           .then(doc => {
             this.user.name=''
@@ -98,6 +100,14 @@ export default {
           }).catch((error) => {
             console.log(error);
         });
+          }else {
+                this.error = 'Contraseña no coincide'
+
+                }
+
+            }else{
+                this.error = 'Todos los campos son requeridos'
+            }
         },
     }
 }

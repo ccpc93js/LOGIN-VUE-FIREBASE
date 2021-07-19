@@ -55,6 +55,7 @@
                     </v-form>
 
                     <v-alert
+                        class="mt-5"
                         text
                         type="error"
                         v-if="error"
@@ -103,7 +104,7 @@ export default {
 
           editUser(userID){
             this.error = ''
-            if(this.user.name && this.user.email && this.user.password && this.user.password  ){
+            if(this.user.name && this.user.email && this.user.password ){
                 if(this.user.password === this.passwordConfirm ){
             db.collection('users').doc(userID).update({
               name: this.user.name,
@@ -117,7 +118,7 @@ export default {
             });
 
             console.log(this.user.name)
-                            }else {
+           }else {
                 this.error = 'Contraseña no coincide'
 
                 }
