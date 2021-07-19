@@ -90,13 +90,12 @@ import firebase from 'firebase'
           register(){
             let tis = this;
             this.error = ''
-            if(this.name && this.email && this.password && this.password  ){
+            if(this.name && this.email && this.password ){
                 if(this.password === this.passwordConfirm ){
 
-                //enviar formulario
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                 .then(userData =>{
-                    //actualizar el usuario
+
                     if(userData){
 
 
@@ -171,9 +170,7 @@ import firebase from 'firebase'
                 return true;
             }
         },
-        // title(){
-        //     return (this.type==0)?'Login':(this.type==1)?'Registro':'Recuperar contraseña';
-        // }
+
      }
 
 

@@ -128,9 +128,7 @@ export default {
             }
           },
     },
-    // computed:{
-    //     ...mapState(['user'])
-    // }
+
 }
 </script>
 
