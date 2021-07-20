@@ -45,6 +45,7 @@
                           type="password"
                           color="helping"
                           required
+                          v-model="passwordConfirm"
                         ></v-text-field>
                     <div class="text-center mt-5">
                         <v-btn rounded color="downDark" dark type="submit">Agregar</v-btn>
@@ -81,6 +82,7 @@ export default {
             name: '',
             email: '',
             password:'',
+            passwordConfirm:'',
             error: '',
             user:{}
         }
